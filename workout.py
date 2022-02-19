@@ -24,12 +24,5 @@ class Workout():
         Workout.workout_dict["sets"] = self.sets
         Workout.workout_dict["weight"] = self.weight
 
-
-    def toJSON(Self):
+    def toJSON(self):
         return Workout.workout_dict
-
-
-w = Workout("cardio")
-w.addCardioAttributes(20,"jog")
-jsonReturn = w.toJSON()
-print(jsonReturn)
