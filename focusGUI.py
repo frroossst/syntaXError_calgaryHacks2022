@@ -33,7 +33,7 @@ class focusGUI():
                 self.pg.Text(quotes["quotes"][index])
             ],
             [
-                self.pg.Button("Play") 
+                self.pg.Button("Play"), self.pg.Button("Stop") 
             ],
             [
                 self.pg.Button("End Timer",font=("Times New Roman",12),pad=(5,0),visible=True)
@@ -58,9 +58,8 @@ class focusGUI():
                 p.play()
                 self.time.sleep(songs[index])
                 p.stop()
-                          
-
-
+            if event == "Stop":
+                break 
 
 
             current_time = int(round(self.time.time()))
