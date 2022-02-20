@@ -1,6 +1,10 @@
+import webbrowser
+
+
 class workoutGUI():
 
     import PySimpleGUI as pg
+    import webbrowser
     import json
     pg.theme("DarkAmber")
 
@@ -25,13 +29,13 @@ class workoutGUI():
                 self.pg.InputText(1,key="cardio4",visible=False)
             ],
             [
-               self.pg.Text("Strength Workout Details",key="strength0",visible=False),
-               self.pg.InputText("Enter reps",key="strength1",visible=False),
-               self.pg.InputText("Enter sets",key="strength2",visible=False),
-               self.pg.InputText("Weight",key="strength3",visible=False) 
+                self.pg.Text("Strength Workout Details",key="strength0",visible=False),
+                self.pg.InputText("Enter reps",key="strength1",visible=False),
+                self.pg.InputText("Enter sets",key="strength2",visible=False),
+                self.pg.InputText("Weight",key="strength3",visible=False) 
             ],
             [
-
+                self.pg.Button("Help",font=("Times New Roman",12),pad=(5,0),visible=True)
             ]
         ]
 
@@ -44,6 +48,9 @@ class workoutGUI():
             if event == "Cancel" or event == self.pg.WIN_CLOSED:
                 run = False
                 break
+
+            if event == "Help":
+                webbrowser.open("https://www.google.ca")
 
             elif event == "Save":
                 workout_record = {}
