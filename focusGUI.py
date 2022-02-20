@@ -24,10 +24,8 @@ class focusGUI():
 
         layout = [
             [
-                self.pg.Text("Time elapsed : ")
-            ],
-            [
-                 self.pg.Text("",size=(8,2),key="timerObj")
+                self.pg.Text("Time elapsed : "),
+                self.pg.Text("",key="timerObj")
             ],
             [
                 self.pg.Text(quotes["quotes"][index])
@@ -46,6 +44,8 @@ class focusGUI():
         
         while run:
             event, values = window.read()
+            current_time = self.time.time()
+            window["timerObj"].Update(current_time - start_time)
             if event == "Cancel" or event == self.pg.WIN_CLOSED:
                 run = False
                 break
