@@ -26,7 +26,10 @@ class workoutGUI():
                 self.pg.InputText(1,key="cardio4",visible=False)
             ],
             [
-                
+               self.pg.Text("Strength Worout Details",key="strength0",visible=False),
+               self.pg.InputText("Enter reps",key="strength1",visible=False),
+               self.pg.InputText("Enter sets",key="strength2",visible=False),
+               self.pg.InputText("Weight",key="strength3",visible=False) 
             ]
         ]
 
@@ -44,10 +47,24 @@ class workoutGUI():
                 window["cardio2"].Update(visible=True)
                 window["cardio3"].Update(visible=True)
                 window["cardio4"].Update(visible=True)
-                window["cardio5"].update(visible=True)
+                window["cardio5"].Update(visible=True)
+                
+                window["strength0"].Update(visible=False)
+                window["strength1"].Update(visible=False)
+                window["strength2"].Update(visible=False)
+                window["strength3"].Update(visible=False)
 
             elif event == "Next" and values["fac"][0] == "Strength":
-                pass
+                window["cardio1"].Update(visible=False) 
+                window["cardio2"].Update(visible=False)
+                window["cardio3"].Update(visible=False)
+                window["cardio4"].Update(visible=False)
+                window["cardio5"].Update(visible=False)
+
+                window["strength0"].Update(visible=True)
+                window["strength1"].Update(visible=True)
+                window["strength2"].Update(visible=True)
+                window["strength3"].Update(visible=True)
 
             print(values)
 
