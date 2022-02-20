@@ -1,3 +1,6 @@
 {
-      "workoutType": "strength"
+      "workoutType": "strength",
+      "reps": "50",
+      "sets": "2",
+      "weight": "15"
 }

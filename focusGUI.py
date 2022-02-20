@@ -1,11 +1,11 @@
 class focusGUI():
 
     import PySimpleGUI as pg
-    from playsound import playsound
     from TrackWorkout import TrackWorkout as TrackWorkout
     import random
     import json
     import time
+    import vlc
     pg.theme("DarkAmber")
 
     def __init__(self) -> None:
@@ -52,9 +52,16 @@ class focusGUI():
             if event == "End Timer":
                 t.endTime()
             if event == "Play":
-                songs = ["escape.mp3","AgapeOceanSound.mp3","OneDanceDrakefeatWizkidKyla.mp3","TheRockRapFaceOff.mp3"]
-                index = self.random.choice(songs)
-                self.playsound(index)
+                songs = {"escape.mp3" : 192,"AgapeOceanSound.mp3" : 165,"OneDanceDrakefeatWizkidKyla.mp3" : 175,"TheRockRapFaceOff.mp3" : 51}
+                index = self.random.choice(list(songs.keys()))
+                p = self.vlc.MediaPlayer(index)
+                p.play()
+                self.time.sleep(songs[index])
+                p.stop()
+                          
+
+
+
 
             current_time = int(round(self.time.time()))
             window.FindElement("timerObj").Update(current_time - start_time)
