@@ -12,6 +12,6 @@ if os.path.isfile(userDataPath):
         user_json = json.load(openfile)
         user_data = User(user_json['name'], user_json['weeklyFrequency'], user_json['minimumWorkoutDuration'])
 else:
-    user_json = ""
+    user_data = User()
 
 us.runUserGUI(user_data)
