@@ -1,6 +1,3 @@
-import webbrowser
-
-
 class workoutGUI():
 
     import PySimpleGUI as pg
@@ -50,7 +47,7 @@ class workoutGUI():
                 break
 
             if event == "Help":
-                webbrowser.open("https://www.google.ca")
+                self.webbrowser.open("https://www.google.ca")
 
             elif event == "Save":
                 workout_record = {}
